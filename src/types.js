@@ -1,6 +1,7 @@
-type Config = {
+//@ flow
+export type Config = {
   target: string,
   endpoint: string,
-  interval: number,
+  tick: number,
   onDocumentReceived: string => void
 }

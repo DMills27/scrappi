@@ -1,15 +1,12 @@
-const initialConfig = {
-  target: 'https://google.com',
-  endpoint: 'https://google.com',
-  interval: 500,
-  onDocumentReceived: () => {}
-}
+// @flow
+import type { Config } from './types'
 
-function createConfig(config: Config) {
+export default (config: Config) => {
   return {
-    ...config,
-    ...initialConfig
+    target: 'https://google.com',
+    endpoint: 'https://google.com',
+    tick: 500,
+    onDocumentReceived: () => {},
+    ...config
   }
 }
-
-module.exports = { createConfig }
