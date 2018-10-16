@@ -4,16 +4,17 @@
   "description": "tiny web scraping utility",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf build && babel src -d build",
+    "lint": "prettier --write --config .prettierrc \"src/*\" && flow",
+    "build": "npm run lint && rimraf build && babel src -d build",
     "start": "npm run build && node build/index.js",
     "dev": "nodemon -w src -x npm start",
     "test": "mocha -r tests/helper.js --require babel-core/register tests/*.js",
-    "test:dev":
-      "mocha -r tests/pollyfill.js --require babel-core/register -w tests/*.js"
+    "test:dev": "mocha -r tests/pollyfill.js --require babel-core/register -w tests/*.js"
   },
   "author": "Jordan Jones <proxima.aust@gmail.com> (http://jordnjones.com/)",
   "license": "ISC",
   "dependencies": {
+    "interval-promise": "^1.3.0",
     "node-fetch": "^2.1.2",
     "parse5": "^5.0.0"
   },
@@ -25,6 +26,7 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-3": "^6.24.1",
     "chai": "^4.1.2",
+    "express": "^4.16.4",
     "mocha": "^5.2.0",
     "rimraf": "^2.6.2",
     "sinon": "^6.1.0"
