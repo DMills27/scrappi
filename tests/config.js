@@ -1,4 +1,4 @@
-import { createConfig } from '../src/config'
+import createConfig from '../src/config'
 import { expect } from 'chai'
 
 describe('configuration', () => {

@@ -14,12 +14,14 @@ describe('scrapi', () => {
   describe('post', () => {
     before(done => {
       server = app.listen(3000, () => {
+        console.log('Mock Server is starting')
         done()
       })
     })
 
     after(done => {
       server.close(() => {
+        console.log('Mock Server is closing')
         done()
       })
     })
@@ -32,13 +34,11 @@ describe('scrapi', () => {
     })
   })
   describe('onDocumentReceived', () => {
-    it('should provide fetched html', () => {
-      let result = scrappi({
+    it('should provide fetched html', async () => {
+      let result = await scrappi({
         ...mockConfig,
         onDocumentReceived: html => {
-          console.log('Heeey\n\n')
-
-          console.log(html)
+          return html
         }
       })
     })
