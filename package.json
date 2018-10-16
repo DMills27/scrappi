@@ -1,0 +1,32 @@
+{
+  "name": "scrappi",
+  "version": "1.0.0",
+  "description": "tiny web scraping utility",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf build && babel src -d build",
+    "start": "npm run build && node build/index.js",
+    "dev": "nodemon -w src -x npm start",
+    "test": "mocha -r tests/helper.js --require babel-core/register tests/*.js",
+    "test:dev":
+      "mocha -r tests/pollyfill.js --require babel-core/register -w tests/*.js"
+  },
+  "author": "Jordan Jones <proxima.aust@gmail.com> (http://jordnjones.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.1.2",
+    "parse5": "^5.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "rimraf": "^2.6.2",
+    "sinon": "^6.1.0"
+  }
+}
