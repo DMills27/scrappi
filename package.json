@@ -1,6 +1,6 @@
 {
   "name": "scrappi",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "tiny web scraping utility",
   "main": "dist/scrappi.min.js",
   "module": "dist/scrappi.esm.js",
