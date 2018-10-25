@@ -4,7 +4,7 @@ export type Config = {
   endpoint: string,
   tick: number,
   verbose: Boolean,
-  once: Boolean
+  once: Boolean,
   onDocumentReceived: string => void,
   post: any => void
 }

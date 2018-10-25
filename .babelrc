@@ -1,3 +1,11 @@
 {
-  "presets": ["env", "flow", "stage-3"]
+  "presets": [    [
+    "env",
+    {
+      "modules": false
+    }
+  ],"flow", "stage-3"],
+  "plugins": [
+    "external-helpers"
+  ]
 }
