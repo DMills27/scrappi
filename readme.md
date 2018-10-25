@@ -1,7 +1,11 @@
 # scrappi
 
 > Versatile web scraping utility designed with collecting time series data in mind.
+## Install
 
+```bash
+npm i scrappi
+```
 ## Usage
 Main use case of scrappi would be to scrape a webpage for value(s), post to an api endpoint, at a specific interval
 
