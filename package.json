@@ -1,6 +1,6 @@
 {
   "name": "scrappi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "tiny web scraping utility",
   "main": "dist/scrappi.min.js",
   "module": "dist/scrappi.esm.js",
@@ -8,7 +8,7 @@
   "scripts": {
     "lint": "prettier --write --config .prettierrc \"src/*\" && flow",
     "build": "npm run lint && rimraf dist && rollup -c",
-    "publish": "babel src -d dist/scrappi.js",
+    "publish": "rollup -c && npm publish",
     "start": "npm run build && node build/index.js",
     "dev": "nodemon -w src -x npm start",
     "test": "mocha -r tests/polyfill.js --require babel-core/register tests/*.js",

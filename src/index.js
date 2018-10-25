@@ -3,8 +3,8 @@ import fetch from 'node-fetch'
 import createConfig from './config'
 import interval from 'interval-promise'
 import type { Config } from './types'
-//Import Babel polyfill for build
-require('babel-polyfill')
+
+import 'babel-polyfill'
 
 export default async function(config: Config) {
   const {
